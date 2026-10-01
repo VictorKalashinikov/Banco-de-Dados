@@ -63,3 +63,26 @@ INSERT INTO matriculas (id_aluno, id_plano, id_instrutor, data_inicio, status) V
 SELECT * FROM matriculas;
 SELECT * FROM alunos;
 SELECT * FROM instrutores;
+
+SELECT nome, telefone
+FROM alunos
+ORDER BY nome ASC;
+
+SELECT *
+FROM planos
+WHERE valor_mensal < 100.00;
+
+SELECT *
+FROM instrutores
+WHERE especialidae = 'Musculação';
+
+SELECT count(*) AS total_matriculas_ativas
+FROM matriculas
+WHERE status = 'Ativo';
+
+SELECT
+aluno.nome AS aluno,
+matriculas.data_inicio,
+matriculas.status
+FROM matriculas
+INNER JOIN alunos ON matriculas.id_aluno=alunos.id_aluno;
